@@ -53,19 +53,26 @@ listOfNames(cats);
 
 // Question 8
 
-function createList(cats){
-
-    let listItems = "";
-    for(let i = 0; i < cats.length; i++){
-   console.log(items[i]);
-   listItems = listItems + "<li>" + items[i] + "</li>";
-}
-
-}
-
-const finalHTML = "<ul>" + listItems + "</ul>";
-
-console.log(finalHTML);
-
-createList(cats);
-
+function createCats(cats) {
+    let htmlObject = "";
+  
+    for (let i = 0; i < cats.length; i++) {
+      let catsAge = "Age unknown";
+  
+      if (cats[i].age) {
+        catsAge = cats[i].age;
+      }
+  
+      html += `<div>
+      <h5>${cats[i].name}</h5>
+      <p>${catsAge}</p>
+      </div>`;
+    }
+    return htmlObject;
+  }
+  
+  let catContainer = document.querySelector(".cat-container");
+  let finalHtml = createCats(cats);
+  
+  catContainer.innerHTML = finalHtml;
+  
